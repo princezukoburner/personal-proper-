@@ -1,0 +1,23 @@
+def right_aligned():
+    word = input('Enter a string or DONE: '+"\n")
+    aligned = ''
+    longest = 0
+    space = ' '
+    word_lst = []
+
+    while word.upper() != 'DONE':
+        word_lst.append(word)
+        if len(word) > longest:
+            longest = len(word)
+        word = input('Enter a string or DONE: '+"\n")
+
+    for i in word_lst:
+        diff = longest - len(i)
+        #print('longest: ',diff)
+        #print('diff')
+        if diff > 0:
+            print(space*diff + i)
+        else:
+            print(i)
+
+right_aligned()
